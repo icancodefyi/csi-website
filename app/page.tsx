@@ -1,10 +1,11 @@
+import Testimonials from "@/components/testimonials";
+import Footer from "@/components/footer";
 
-const page = () => {
+export default function Home() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold">CSII WEBSITEEEE</h1>
-    </div>
-  )
+    <main>
+      <Testimonials />
+      <Footer />
+    </main>
+  );
 }
-
-export default page
