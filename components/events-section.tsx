@@ -59,11 +59,12 @@ export default function EventsSection() {
   const [endPx, setEndPx] = useState(0);
 
   const measure = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const overflow =
-      el.scrollWidth - window.innerWidth + window.innerWidth * 0.1;
-    setEndPx(Math.max(0, overflow));
+    requestAnimationFrame(() => {
+      const el = trackRef.current;
+      if (!el) return;
+      const overflow = el.scrollWidth - el.parentElement!.clientWidth;
+      setEndPx(Math.max(0, overflow));
+    });
   }, []);
 
   useEffect(() => {
@@ -78,7 +79,7 @@ export default function EventsSection() {
     <section
       id="events"
       ref={targetRef}
-      className="relative h-[300vh] bg-csi-cream"
+      className="relative h-[400vh] bg-csi-cream"
     >
       <div className="sticky top-0 h-screen flex flex-col justify-center overflow-hidden pt-16 md:pt-20 pb-6 md:pb-10">
         {/* Section Header */}
@@ -100,7 +101,7 @@ export default function EventsSection() {
         <motion.div
           ref={trackRef}
           style={{ x }}
-          className="flex gap-4 md:gap-6 pr-8 md:pr-[20vh] pl-4 md:pl-8"
+          className="flex gap-4 md:gap-6 pl-4 md:pl-8 pr-8 md:pr-12"
         >
           {events.map((event) => (
             <div
@@ -109,10 +110,14 @@ export default function EventsSection() {
               style={{ backgroundColor: event.color }}
             >
               {/* Noise texture */}
-              <div className="absolute inset-0 opacity-15 pointer-events-none mix-blend-overlay" style={{
-                backgroundImage: "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 60%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 0%, transparent 50%)",
-                backgroundRepeat: "no-repeat",
-              }} />
+              <div
+                className="absolute inset-0 opacity-15 pointer-events-none mix-blend-overlay"
+                style={{
+                  backgroundImage:
+                    "radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 60%), radial-gradient(circle at 70% 80%, rgba(255,255,255,0.08) 0%, transparent 50%)",
+                  backgroundRepeat: "no-repeat",
+                }}
+              />
 
               {/* Grid pattern */}
               <div
