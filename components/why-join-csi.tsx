@@ -2,7 +2,6 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, type MotionValue } from "framer-motion";
-import Link from "next/link";
 
 const benefits = [
   {
@@ -167,19 +166,6 @@ export default function WhyJoinCSI() {
         </p>
       </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-16 px-4 md:px-0">
-        {["Networking", "Events", "Projects", "Mentorship", "Community"].map(
-          (tag) => (
-            <span
-              key={tag}
-              className="bg-csi-navy/[0.04] text-csi-navy/70 px-5 md:px-8 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold tracking-wide"
-            >
-              {tag}
-            </span>
-          ),
-        )}
-      </div>
-
       <main
         ref={container}
         className="relative flex w-full flex-col items-center justify-center pb-[25vh] pt-[8vh]"
@@ -201,51 +187,6 @@ export default function WhyJoinCSI() {
           );
         })}
       </main>
-
-      <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-8 max-w-4xl mx-auto w-full px-4 md:px-0 pb-20 md:pb-28">
-        <Link
-          href="#contact"
-          className="group w-full h-[72px] md:h-[96px] flex items-center justify-between px-6 md:px-12 rounded-2xl border border-csi-navy/[0.12] bg-white hover:bg-csi-navy transition-all duration-300"
-        >
-          <span className="text-csi-navy text-lg md:text-2xl font-black -tracking-[0.02em] transition-colors duration-300 group-hover:text-white">
-            Join the Chapter
-          </span>
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </Link>
-        <Link
-          href="#events"
-          className="group w-full h-[72px] md:h-[96px] flex items-center justify-between px-6 md:px-12 rounded-2xl border border-csi-navy/[0.12] bg-white hover:bg-csi-navy transition-all duration-300"
-        >
-          <span className="text-csi-navy text-lg md:text-2xl font-black -tracking-[0.02em] transition-colors duration-300 group-hover:text-white">
-            Explore Events
-          </span>
-          <svg
-            className="w-5 h-5 md:w-6 md:h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            strokeWidth={2.5}
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M17 8l4 4m0 0l-4 4m4-4H3"
-            />
-          </svg>
-        </Link>
-      </div>
     </section>
   );
 }
