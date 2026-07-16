@@ -311,7 +311,7 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full overflow-hidden bg-csi-lighter py-16">
+    <section className="w-full overflow-hidden py-16">
       <motion.div
         className="mx-auto max-w-7xl px-6 md:px-16 mb-8"
         initial="hidden"
