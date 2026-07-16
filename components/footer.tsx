@@ -79,7 +79,7 @@ const Footer = () => {
       className="relative min-h-[70vh] overflow-hidden bg-csi-dark pt-20 pb-44 lg:pb-60 flex flex-col"
     >
       {/* Top Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 md:px-16">
+      <div className="relative z-10 mx-auto w-full max-w-6xl px-4 md:px-8">
         <div className="flex flex-col justify-between gap-16 lg:flex-row lg:gap-8">
           {/* Left Description */}
           <div className="max-w-md text-base font-normal leading-relaxed text-white/70">

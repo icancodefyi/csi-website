@@ -21,7 +21,7 @@ const HeroSection = () => {
   return (
     <section className="flex min-h-[90vh] items-center bg-csi-cream pt-32 pb-20 md:pt-40 md:pb-32">
       <motion.div
-        className="mx-auto flex w-full max-w-7xl flex-col items-center gap-16 px-6 md:flex-row md:gap-12"
+        className="mx-auto flex w-full max-w-6xl flex-col items-center gap-16 px-4 md:px-8 md:flex-row md:gap-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}

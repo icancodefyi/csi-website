@@ -313,7 +313,7 @@ export default function Testimonials() {
   return (
     <section className="w-full overflow-hidden bg-csi-cream py-24 md:py-32">
       <motion.div
-        className="mx-auto max-w-7xl px-6 md:px-16 mb-12"
+        className="mx-auto max-w-6xl px-4 md:px-8 mb-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}

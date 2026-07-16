@@ -1,5 +1,6 @@
 import HeroSection from "@/components/hero-section";
 import WhyJoinCSI from "@/components/why-join-csi";
+import EventsSection from "@/components/events-section";
 import Testimonials from "@/components/testimonials";
 import Footer from "@/components/footer";
 
@@ -8,6 +9,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <WhyJoinCSI />
+      <EventsSection />
       <Testimonials />
       <Footer />
     </main>
