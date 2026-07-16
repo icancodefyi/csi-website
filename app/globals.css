@@ -8,15 +8,19 @@ html {
   --font-display: "Clash Display", system-ui, sans-serif;
   --font-sans: "General Sans", system-ui, sans-serif;
 
-  --color-primary: #061B4D;
+  --color-primary: #1e3658;
+  --color-navy: #1e3658;
   --color-accent: #3B82F6;
+  --color-blue: #3B82F6;
   --color-secondary: #EAF2FF;
+  --color-soft: #EAF2FF;
   --color-bg: #FFFFFF;
+  --color-white: #FFFFFF;
 }
 
 body {
   background-color: #FFFFFF;
-  color: #061B4D;
+  color: #1e3658;
 }
 
 @keyframes fade-up {

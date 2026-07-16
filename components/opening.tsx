@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
-export default function Hero() {
+export default function Opening() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -96,7 +96,7 @@ export default function Hero() {
               className="mt-10 md:mt-12 flex items-center gap-4"
             >
               <a
-                href="#who-we-are"
+                href="#story"
                 className="inline-flex items-center gap-2 px-8 py-4 bg-primary text-white font-medium rounded-full hover:bg-primary/90 transition-colors duration-300 group"
               >
                 Explore CSI

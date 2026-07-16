@@ -1,26 +1,24 @@
-import Hero from "@/components/hero";
-import WhoWeAre from "@/components/who-we-are";
-import Journey from "@/components/journey";
-import EventsShowcase from "@/components/events";
-import Community from "@/components/community";
-import Projects from "@/components/projects";
-import Gallery from "@/components/gallery";
-import Numbers from "@/components/numbers";
-import CTA from "@/components/cta";
+import Opening from "@/components/opening";
+import Story from "@/components/story";
+import CommunityWall from "@/components/community-wall";
+import EventsShowcase from "@/components/events-showcase";
+import ProjectsReveal from "@/components/projects-reveal";
+import NumbersImpact from "@/components/numbers-impact";
+import GalleryPlayful from "@/components/gallery-playful";
+import Finale from "@/components/finale";
 import Footer from "@/components/footer";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
-      <WhoWeAre />
-      <Journey />
+      <Opening />
+      <Story />
+      <CommunityWall />
       <EventsShowcase />
-      <Community />
-      <Projects />
-      <Gallery />
-      <Numbers />
-      <CTA />
+      <ProjectsReveal />
+      <NumbersImpact />
+      <GalleryPlayful />
+      <Finale />
       <Footer />
     </main>
   );
