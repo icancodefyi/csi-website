@@ -1,39 +1,74 @@
 "use client";
 
 import React from "react";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { staggerChildren: 0.12 } },
+} as const;
+
+const item = {
+  hidden: { opacity: 0, y: 28 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
+  },
+} as const;
 
 const HeroSection = () => {
   return (
-    <section className="flex items-center pt-24 pb-16 md:pt-32 md:pb-24">
-      <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-16 px-6 md:flex-row">
-        {/* Left - Text */}
+    <section className="flex min-h-[90vh] items-center bg-csi-cream pt-32 pb-20 md:pt-40 md:pb-32">
+      <motion.div
+        className="mx-auto flex w-full max-w-7xl flex-col items-center gap-16 px-6 md:flex-row md:gap-12"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={container}
+      >
         <div className="flex w-full flex-col justify-center md:w-1/2">
-          <span className="mb-6 inline-flex w-fit items-center gap-2 rounded-full bg-csi-navy/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-widest text-csi-navy">
+          <motion.span
+            variants={item}
+            className="mb-8 inline-flex w-fit items-center gap-2 rounded-full bg-csi-navy/[0.04] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-csi-navy/60"
+          >
             <span className="h-1.5 w-1.5 rounded-full bg-csi-blue" />
             Atharva College of Engineering
-          </span>
-          <h1 className="mb-8 text-4xl font-black leading-[1.1] tracking-tight text-csi-navy md:text-5xl lg:text-6xl">
-            We Are <span className="text-csi-blue">CSI ACE</span>
-          </h1>
-          <p className="w-full text-base font-medium leading-[1.7] text-csi-navy/70 md:w-[85%] md:text-lg">
-            The official student chapter of the Computer Society of India at
-            Atharva College of Engineering. We bring together passionate minds
-            to learn, collaborate, and innovate — building the tech leaders of
-            tomorrow through hands-on workshops, hackathons, and a thriving
-            community.
-          </p>
-          <div className="mt-10 flex flex-col gap-4 sm:flex-row">
+          </motion.span>
+
+          <motion.h1
+            variants={item}
+            className="text-5xl font-black leading-[0.9] -tracking-[0.03em] text-csi-navy sm:text-6xl md:text-7xl lg:text-8xl"
+          >
+            CSI
+            <br />
+            <span className="text-csi-blue">ACE</span>.
+          </motion.h1>
+
+          <motion.p
+            variants={item}
+            className="mt-8 max-w-lg text-lg font-medium leading-relaxed text-csi-navy/60 md:text-xl"
+          >
+            The Computer Society of India student chapter at Atharva. We build
+            the next generation of tech leaders through workshops, hackathons,
+            and a thriving community.
+          </motion.p>
+
+          <motion.div
+            variants={item}
+            className="mt-12 flex flex-col gap-4 sm:flex-row"
+          >
             <a
-              href="#about"
-              className="inline-flex items-center justify-center gap-2 rounded-xl bg-csi-navy px-8 py-4 text-sm font-semibold tracking-wide text-white shadow-lg shadow-csi-navy/20 transition-all duration-300 hover:shadow-xl hover:shadow-csi-navy/30 hover:scale-[1.02]"
+              href="#why-join"
+              className="group inline-flex items-center justify-between gap-4 rounded-xl bg-csi-navy px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-csi-navy/10 transition-all duration-300 hover:bg-csi-navy-dark hover:shadow-xl hover:shadow-csi-navy/15"
             >
               Explore Chapter
               <svg
-                className="h-4 w-4"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={2}
+                strokeWidth={2.5}
               >
                 <path
                   strokeLinecap="round"
@@ -44,35 +79,56 @@ const HeroSection = () => {
             </a>
             <a
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-xl border border-csi-navy/10 bg-white px-8 py-4 text-sm font-semibold tracking-wide text-csi-navy shadow-sm transition-all duration-300 hover:border-csi-navy/20 hover:shadow-md"
+              className="group inline-flex items-center justify-between gap-4 rounded-xl border border-csi-navy/[0.12] bg-white px-8 py-4 text-sm font-semibold text-csi-navy transition-all duration-300 hover:border-csi-navy/30 hover:bg-csi-navy/[0.02]"
             >
               Join Us
-            </a>
-          </div>
-        </div>
-
-        {/* Right - Image Placeholder */}
-        <div className="flex w-full justify-center md:w-1/2 md:justify-end mt-12 md:mt-0">
-          <div className="flex h-[350px] w-full max-w-[500px] items-center justify-center rounded-3xl border-2 border-dashed border-csi-navy/10 bg-csi-navy/[0.03]">
-            <div className="flex flex-col items-center gap-3 text-csi-muted">
               <svg
-                className="h-12 w-12"
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
-                strokeWidth={1}
+                strokeWidth={2.5}
               >
                 <path
                   strokeLinecap="round"
                   strokeLinejoin="round"
-                  d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5A2.25 2.25 0 0022.5 18.75V5.25A2.25 2.25 0 0020.25 3H3.75A2.25 2.25 0 001.5 5.25v13.5A2.25 2.25 0 003.75 21z"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
                 />
               </svg>
-              <span className="text-sm font-medium">Your image here</span>
+            </a>
+          </motion.div>
+        </div>
+
+        <motion.div
+          variants={item}
+          className="flex w-full justify-center md:w-1/2 md:justify-end"
+        >
+          <div className="relative flex h-[400px] w-full max-w-[520px] items-center justify-center overflow-hidden rounded-[2.5rem] bg-csi-navy/[0.03]">
+            <div
+              className="absolute inset-0 opacity-30"
+              style={{
+                backgroundImage:
+                  "radial-gradient(circle at 30% 40%, rgba(30,55,89,0.08) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(59,130,246,0.06) 0%, transparent 50%)",
+              }}
+            />
+            <div className="relative z-10 flex flex-col items-center gap-6 px-8 text-center">
+              <img
+                src="/assets/csi-logo.svg"
+                alt="CSI ACE"
+                className="h-28 w-28 opacity-40"
+              />
+              <div className="space-y-2">
+                <p className="text-2xl font-black leading-tight text-csi-navy/30">
+                  CSI ACE
+                </p>
+                <p className="text-sm font-medium text-csi-navy/20">
+                  Computer Society of India
+                </p>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

@@ -311,16 +311,16 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="w-full overflow-hidden py-16">
+    <section className="w-full overflow-hidden bg-csi-cream py-24 md:py-32">
       <motion.div
-        className="mx-auto max-w-7xl px-6 md:px-16 mb-8"
+        className="mx-auto max-w-7xl px-6 md:px-16 mb-12"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.3 }}
         variants={headerVariants}
       >
-        <motion.div variants={itemVariant} className="mb-4">
-          <span className="inline-flex items-center gap-2 rounded-full bg-csi-navy/[0.06] px-4 py-2 text-xs font-medium uppercase text-csi-navy">
+        <motion.div variants={itemVariant} className="mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full bg-csi-navy/[0.04] px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.12em] text-csi-navy/60">
             <span className="h-1.5 w-1.5 rounded-full bg-csi-blue" />
             What our members say
           </span>
@@ -328,7 +328,7 @@ export default function Testimonials() {
 
         <motion.h2
           variants={itemVariant}
-          className="text-4xl sm:text-5xl font-bold leading-tight tracking-tight text-csi-navy"
+          className="text-3xl sm:text-4xl md:text-6xl font-black -tracking-[0.03em] leading-[0.95] text-csi-navy"
         >
           Real Impact.{" "}
           <span className="text-csi-blue">Real</span> Stories.
@@ -336,7 +336,7 @@ export default function Testimonials() {
 
         <motion.p
           variants={itemVariant}
-          className="mt-2 text-base text-csi-muted sm:text-lg"
+          className="mt-5 max-w-lg text-base sm:text-lg font-medium leading-relaxed text-csi-navy/50"
         >
           Hundreds of students have transformed their skills and careers through
           CSI ACE — here&apos;s what they have to say.
@@ -344,7 +344,7 @@ export default function Testimonials() {
 
         <motion.div
           variants={itemVariant}
-          className="mt-6 flex gap-10 sm:gap-16"
+          className="mt-10 flex gap-12 sm:gap-20"
         >
           {[
             { val: "4.9", label: "Avg. rating" },
@@ -357,10 +357,12 @@ export default function Testimonials() {
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
               className="text-center"
             >
-              <p className="text-3xl sm:text-4xl font-bold text-csi-navy">
+              <p className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-csi-navy">
                 {val}
               </p>
-              <p className="mt-0.5 text-sm text-csi-muted">{label}</p>
+              <p className="mt-1 text-xs sm:text-sm font-medium tracking-wide text-csi-navy/40 uppercase">
+                {label}
+              </p>
             </motion.div>
           ))}
         </motion.div>

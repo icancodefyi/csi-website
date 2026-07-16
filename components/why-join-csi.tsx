@@ -62,11 +62,11 @@ function BenefitCard({
     offset: ["start end", "end start"],
   });
 
-  const iconY = useTransform(cardScroll, [0, 1], [40, -40]);
+  const iconY = useTransform(cardScroll, [0, 1], [24, -24]);
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-8 w-full max-w-6xl h-[80vh] md:h-[90vh]">
+    <div className="sticky top-0 flex items-center justify-center px-4 sm:px-6 lg:px-8 w-full h-[80vh] md:h-[90vh]">
       <motion.div
         ref={cardRef}
         style={{
@@ -74,40 +74,50 @@ function BenefitCard({
           scale,
           top: `calc(2vh + ${index * 8}px)`,
         }}
-        className="relative w-full rounded-[2.5rem] overflow-hidden flex flex-col items-start gap-6 md:flex-row md:items-center group py-8 pl-6 pr-4 md:py-14 md:pl-14 md:pr-10 shadow-xl min-h-[340px] md:min-h-[500px] origin-top"
+        className="relative w-full rounded-[2.5rem] overflow-hidden flex flex-col-reverse items-start gap-6 md:flex-row md:items-center group py-10 pl-8 pr-6 md:py-16 md:pl-16 md:pr-12 shadow-xl min-h-[360px] md:min-h-[520px] origin-top"
       >
         {/* Noise texture overlay */}
         <div
-          className="absolute inset-0 pointer-events-none z-20"
+          className="absolute inset-0 pointer-events-none z-10"
           style={{
             backgroundImage:
-              "radial-gradient(circle at 25% 25%, rgba(255,255,255,0.03) 0%, transparent 50%), radial-gradient(circle at 75% 75%, rgba(255,255,255,0.02) 0%, transparent 50%)",
+              "radial-gradient(circle at 20% 30%, rgba(255,255,255,0.04) 0%, transparent 60%), radial-gradient(circle at 80% 70%, rgba(255,255,255,0.02) 0%, transparent 50%)",
           }}
         />
 
-        {/* Text content */}
-        <div className="relative z-30 flex flex-col justify-center h-full w-full md:w-[42%] pl-2 md:pl-10">
+        {/* Subtle grid pattern */}
+        <div
+          className="absolute inset-0 pointer-events-none z-0 opacity-[0.03]"
+          style={{
+            backgroundImage:
+              "linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)",
+            backgroundSize: "80px 80px",
+          }}
+        />
+
+        {/* Content */}
+        <div className="relative z-20 flex flex-col justify-center h-full w-full md:w-[44%] pl-2 md:pl-12">
           <span
-            className="text-xs font-semibold tracking-widest uppercase mb-4"
+            className="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
             style={{ color: accent }}
           >
-            0{index + 1}
+            0{index + 1} &nbsp;/&nbsp; 03
           </span>
           <h3
-            className="text-2xl sm:text-3xl md:text-[2.8rem] font-black tracking-[-0.02em] leading-[1.05]"
+            className="text-3xl sm:text-4xl md:text-[3rem] font-black -tracking-[0.02em] leading-[0.95]"
             style={{ color: textColor }}
           >
             {title}
           </h3>
           <p
-            className="text-sm sm:text-base font-semibold tracking-wide mt-3"
-            style={{ color: accent }}
+            className="text-sm sm:text-base font-semibold tracking-wide mt-4"
+            style={{ color: accent, opacity: 0.9 }}
           >
             {subtitle}
           </p>
           <p
-            className="text-sm md:text-base font-medium leading-relaxed mt-5"
-            style={{ color: textColor, opacity: 0.75 }}
+            className="text-sm md:text-base font-medium leading-relaxed mt-6 max-w-md"
+            style={{ color: textColor, opacity: 0.65 }}
           >
             {desc}
           </p>
@@ -116,16 +126,13 @@ function BenefitCard({
         {/* Illustration */}
         <motion.div
           style={{ y: iconY }}
-          className="
-            relative w-full pointer-events-none flex items-center justify-start z-10
-            md:justify-center md:absolute md:inset-y-0 md:right-0 md:w-[58%] md:h-auto
-          "
+          className="relative w-full pointer-events-none flex items-center justify-start z-10 md:justify-end md:absolute md:inset-y-0 md:right-0 md:w-[56%] md:h-auto"
         >
-          <div className="w-full md:w-auto flex items-center justify-center">
+          <div className="w-full md:w-auto flex items-center justify-center md:justify-end pr-0 md:pr-8">
             <img
               src={image}
               alt=""
-              className="w-[220px] md:w-[380px] h-auto object-contain opacity-80 transition-all duration-700 group-hover:scale-105"
+              className="w-[200px] md:w-[420px] h-auto object-contain opacity-75 transition-all duration-700 group-hover:scale-[1.04]"
             />
           </div>
         </motion.div>
@@ -142,22 +149,32 @@ export default function WhyJoinCSI() {
   });
 
   return (
-    <section className="flex flex-col items-center pt-24 px-4 md:px-8 pt-[15vh] md:pt-[20vh]">
-      <h2 className="max-w-3xl text-center text-csi-navy text-2xl sm:text-3xl md:text-5xl font-black leading-[0.95] tracking-tight px-2 md:px-0">
-        Why Join CSI?
-      </h2>
-      <p className="mt-4 max-w-lg text-center text-sm sm:text-base text-csi-muted font-medium leading-relaxed">
-        Discover the benefits of being part of our community
-      </p>
+    <section
+      id="why-join"
+      className="flex flex-col items-center pt-[12vh] md:pt-[18vh] px-4 md:px-8"
+    >
+      <motion.div
+        className="text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+      >
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black -tracking-[0.03em] leading-[0.95] text-csi-navy">
+          Why Join CSI?
+        </h2>
+        <p className="mt-5 max-w-md mx-auto text-base sm:text-lg font-medium leading-relaxed text-csi-navy/50">
+          Discover the benefits of being part of our community
+        </p>
+      </motion.div>
 
-      <div className="flex flex-wrap justify-center gap-3 md:gap-5 mt-12 px-4 md:px-0">
+      <div className="flex flex-wrap justify-center gap-3 md:gap-4 mt-16 px-4 md:px-0">
         {["Networking", "Events", "Projects", "Mentorship", "Community"].map(
-          (item) => (
+          (tag) => (
             <span
-              key={item}
-              className="bg-csi-navy text-white px-6 md:px-10 py-3 md:py-5 rounded-full text-sm md:text-xl font-semibold"
+              key={tag}
+              className="bg-csi-navy/[0.04] text-csi-navy/70 px-5 md:px-8 py-3 md:py-4 rounded-full text-sm md:text-base font-semibold tracking-wide"
             >
-              {item}
+              {tag}
             </span>
           ),
         )}
@@ -165,12 +182,12 @@ export default function WhyJoinCSI() {
 
       <main
         ref={container}
-        className="relative flex w-full flex-col items-center justify-center pb-[30vh] pt-[5vh]"
+        className="relative flex w-full flex-col items-center justify-center pb-[25vh] pt-[8vh]"
       >
         {benefits.map((b, i) => {
           const targetScale = Math.max(
             0.6,
-            1 - (benefits.length - i - 1) * 0.05,
+            1 - (benefits.length - i - 1) * 0.04,
           );
           return (
             <BenefitCard
@@ -185,21 +202,20 @@ export default function WhyJoinCSI() {
         })}
       </main>
 
-      {/* Bottom CTAs */}
-      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 max-w-5xl mx-auto w-full px-4 md:px-14 mb-16 md:mb-24">
+      <div className="flex flex-col md:flex-row justify-center gap-5 md:gap-8 max-w-4xl mx-auto w-full px-4 md:px-0 pb-20 md:pb-28">
         <Link
           href="#contact"
-          className="group w-full md:w-[70%] h-[70px] md:h-[100px] flex items-center justify-between px-4 md:px-10 rounded-2xl border border-csi-navy/20 bg-white hover:bg-csi-navy transition-all duration-300"
+          className="group w-full h-[72px] md:h-[96px] flex items-center justify-between px-6 md:px-12 rounded-2xl border border-csi-navy/[0.12] bg-white hover:bg-csi-navy transition-all duration-300"
         >
-          <span className="text-csi-navy text-lg md:text-2xl font-black tracking-tight transition-colors duration-300 group-hover:text-white">
+          <span className="text-csi-navy text-lg md:text-2xl font-black -tracking-[0.02em] transition-colors duration-300 group-hover:text-white">
             Join the Chapter
           </span>
           <svg
-            className="w-6 h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
+            className="w-5 h-5 md:w-6 md:h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={2.5}
           >
             <path
               strokeLinecap="round"
@@ -210,17 +226,17 @@ export default function WhyJoinCSI() {
         </Link>
         <Link
           href="#events"
-          className="group w-full md:w-[70%] h-[70px] md:h-[100px] flex items-center justify-between px-4 md:px-10 rounded-2xl border border-csi-navy/20 bg-white hover:bg-csi-navy transition-all duration-300"
+          className="group w-full h-[72px] md:h-[96px] flex items-center justify-between px-6 md:px-12 rounded-2xl border border-csi-navy/[0.12] bg-white hover:bg-csi-navy transition-all duration-300"
         >
-          <span className="text-csi-navy text-lg md:text-2xl font-black tracking-tight transition-colors duration-300 group-hover:text-white">
+          <span className="text-csi-navy text-lg md:text-2xl font-black -tracking-[0.02em] transition-colors duration-300 group-hover:text-white">
             Explore Events
           </span>
           <svg
-            className="w-6 h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
+            className="w-5 h-5 md:w-6 md:h-6 text-csi-navy transition-all duration-300 group-hover:text-white group-hover:translate-x-1"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
-            strokeWidth={2}
+            strokeWidth={2.5}
           >
             <path
               strokeLinecap="round"
