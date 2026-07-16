@@ -7,9 +7,8 @@ const benefits = [
   {
     title: "Networking",
     subtitle: "Connect with industry professionals",
-    desc: "Connect with experienced professionals, alumni, and industry leaders through exclusive networking events. Build relationships that shape your career — mentorship, internships, and collaborations start here.",
+    desc: "Connect with experienced professionals, alumni, and industry leaders through exclusive networking events. Build relationships that shape your career.",
     bg: "#0d1f3c",
-    textColor: "#ffffff",
     accent: "#3b82f6",
     image:
       "https://cdn.csiace.com/csi_website/images/public+2/whyJoin/Data+dashboard+with+charts+and+graphs.svg",
@@ -17,9 +16,8 @@ const benefits = [
   {
     title: "Events",
     subtitle: "Workshops, hackathons & speaker sessions",
-    desc: "Participate in workshops, hackathons, speaker sessions, and tech fests curated exclusively for CSI members. Hands-on learning with real tools, real problems, and real outcomes.",
+    desc: "Participate in workshops, hackathons, speaker sessions, and tech fests curated exclusively for CSI members. Hands-on learning with real outcomes.",
     bg: "#061428",
-    textColor: "#ffffff",
     accent: "#60a5fa",
     image:
       "https://cdn.csiace.com/csi_website/images/public+2/whyJoin/Medal+and+trophy+awarded+for+success.svg",
@@ -27,9 +25,8 @@ const benefits = [
   {
     title: "Projects",
     subtitle: "Build real-world solutions",
-    desc: "Apply your skills beyond the classroom through hands-on, industry-relevant projects. Collaborate on initiatives that solve actual problems, gain practical experience, and build a portfolio that stands out.",
+    desc: "Apply your skills beyond the classroom through hands-on, industry-relevant projects. Build a portfolio that actually stands out.",
     bg: "#020d1c",
-    textColor: "#ffffff",
     accent: "#3b82f6",
     image:
       "https://cdn.csiace.com/csi_website/images/public+2/whyJoin/international+transportation+and+delivery+logistics.svg",
@@ -41,7 +38,6 @@ function BenefitCard({
   subtitle,
   desc,
   bg,
-  textColor,
   accent,
   image,
   index,
@@ -55,24 +51,23 @@ function BenefitCard({
   targetScale: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
-
   const scale = useTransform(progress, range, [1, targetScale]);
 
   return (
-    <div className="sticky top-0 flex items-center justify-center px-4 md:px-6 lg:px-8 w-full h-screen">
+    <div className="sticky top-0 flex items-center justify-center px-4 md:px-6 w-full h-screen">
       <motion.div
         ref={cardRef}
         style={{ backgroundColor: bg, scale }}
-        className="relative w-full rounded-[3rem] overflow-hidden flex flex-col justify-end md:flex-row md:items-center shadow-2xl h-[75vh] md:h-[80vh] origin-top"
+        className="relative w-full rounded-[3rem] overflow-hidden h-[76vh] md:h-[82vh] origin-top shadow-2xl"
       >
-        {/* Texture layers */}
-        <div className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
+        <div
+          className="absolute inset-0 opacity-[0.03] mix-blend-overlay pointer-events-none"
           style={{
-            backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
+            backgroundImage:
+              "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E\")",
             backgroundRepeat: "repeat",
           }}
         />
-
         <div
           className="absolute inset-0 opacity-[0.02] pointer-events-none"
           style={{
@@ -81,60 +76,42 @@ function BenefitCard({
             backgroundSize: "70px 70px",
           }}
         />
-
-        {/* Accent glow */}
         <div
-          className="absolute pointer-events-none"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: `radial-gradient(ellipse 40% 50% at 80% 50%, ${accent}10 0%, transparent 70%)`,
-            inset: 0,
           }}
         />
 
-        {/* Large number */}
-        <div className="absolute top-8 md:top-12 left-8 md:left-16 z-10">
-          <span
-            className="text-[8rem] md:text-[10rem] lg:text-[12rem] font-black leading-none -tracking-[0.06em] opacity-[0.04] select-none"
-            style={{ color: textColor }}
-          >
+        <div className="absolute top-8 md:top-12 left-8 md:left-16 z-10 select-none">
+          <span className="text-[8rem] md:text-[10rem] lg:text-[12rem] font-black leading-none -tracking-[0.06em] text-white/[0.04]">
             {String(index + 1).padStart(2, "0")}
           </span>
         </div>
 
-        {/* Content */}
-        <div className="relative z-20 flex flex-col justify-end h-full w-full md:w-[48%] p-8 md:p-16">
+        <div className="relative z-20 flex flex-col justify-end h-full p-8 md:p-16 max-w-lg">
           <span
             className="text-xs font-semibold tracking-[0.2em] uppercase mb-6"
             style={{ color: accent }}
           >
-            {String(index + 1).padStart(2, "0")} / 03
+            0{index + 1} / 03
           </span>
-          <h3
-            className="text-4xl sm:text-5xl md:text-[3.5rem] font-black -tracking-[0.03em] leading-[0.88]"
-            style={{ color: textColor }}
-          >
+          <h3 className="text-4xl md:text-[3.5rem] font-black -tracking-[0.03em] leading-[0.88] text-white">
             {title}
           </h3>
-          <p
-            className="text-xs sm:text-sm font-semibold tracking-wide mt-5"
-            style={{ color: accent, opacity: 0.85 }}
-          >
+          <p className="text-xs md:text-sm font-semibold tracking-wide mt-5" style={{ color: accent, opacity: 0.85 }}>
             {subtitle}
           </p>
-          <p
-            className="text-sm md:text-base font-medium leading-relaxed mt-5 max-w-md"
-            style={{ color: textColor, opacity: 0.55 }}
-          >
+          <p className="text-sm md:text-base font-medium leading-relaxed mt-5 text-white/50 max-w-md">
             {desc}
           </p>
         </div>
 
-        {/* Illustration */}
-        <div className="relative w-full md:w-[52%] md:absolute md:inset-y-0 md:right-0 flex items-center justify-center md:justify-end pointer-events-none z-10 py-8 md:py-0 md:pr-8">
+        <div className="hidden md:block absolute right-0 top-1/2 -translate-y-1/2 w-[48%] pointer-events-none z-10 pr-8">
           <img
             src={image}
             alt=""
-            className="w-[220px] md:w-[400px] h-auto object-contain opacity-80"
+            className="w-full h-auto object-contain opacity-80"
           />
         </div>
       </motion.div>
@@ -150,54 +127,25 @@ export default function WhyJoinCSI() {
   });
 
   return (
-    <section
-      id="why-join"
-      className="flex flex-col items-center pt-[10vh] md:pt-[14vh] px-4 md:px-6"
-    >
-      {/* Editorial header */}
-      <div className="w-full max-w-5xl mx-auto mb-16 md:mb-24 px-4 md:px-0">
-        <motion.span
-          className="text-xs font-medium tracking-[0.2em] uppercase text-csi-navy/25 mb-8 block"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-        >
-          Why CSI
-        </motion.span>
-        <motion.h2
-          className="text-[10vw] md:text-[7vw] lg:text-[5.5vw] font-black text-csi-navy -tracking-[0.04em] leading-[0.85]"
-          initial={{ opacity: 0, scale: 0.98 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.9, ease: [0.23, 1, 0.32, 1] }}
-        >
+    <section id="why-join" className="flex flex-col items-center pt-[14vh] px-4 md:px-6">
+      <div className="w-full max-w-5xl mx-auto mb-16 md:mb-24">
+        <h2 className="text-[10vw] md:text-[7vw] lg:text-[5.5vw] font-black text-csi-navy -tracking-[0.04em] leading-[0.85]">
           More than
           <br />
           a student club
-        </motion.h2>
-        <motion.p
-          className="mt-6 md:mt-8 max-w-md text-base md:text-lg font-medium text-csi-navy/35 leading-relaxed"
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7, delay: 0.2, ease: [0.23, 1, 0.32, 1] }}
-        >
+        </h2>
+        <p className="mt-6 md:mt-8 max-w-md text-base md:text-lg font-medium text-csi-navy/35 leading-relaxed">
           A community of builders, thinkers, and creators who push each
           other to be better — every single day.
-        </motion.p>
+        </p>
       </div>
 
-      {/* Sticky cards */}
       <main
         ref={container}
         className="relative flex w-full flex-col items-center justify-center pb-[30vh] pt-[8vh]"
       >
         {benefits.map((b, i) => {
-          const targetScale = Math.max(
-            0.55,
-            1 - (benefits.length - i - 1) * 0.05,
-          );
+          const targetScale = Math.max(0.55, 1 - (benefits.length - i - 1) * 0.05);
           return (
             <BenefitCard
               key={i}
