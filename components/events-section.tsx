@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef, useCallback } from "react";
+import { useEffect, useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 const events = [
@@ -50,30 +50,36 @@ const events = [
 
 export default function EventsSection() {
   const targetRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
+
   const { scrollYProgress } = useScroll({
     target: targetRef,
     offset: ["start start", "end end"],
   });
 
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [endPx, setEndPx] = useState(0);
-
-  const measure = useCallback(() => {
-    requestAnimationFrame(() => {
-      const el = trackRef.current;
-      if (!el) return;
-      const overflow = el.scrollWidth - el.parentElement!.clientWidth;
-      setEndPx(Math.max(0, overflow));
-    });
-  }, []);
+  const endPx = useRef(0);
 
   useEffect(() => {
-    measure();
-    window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
-  }, [measure]);
+    const el = trackRef.current;
+    if (!el) return;
 
-  const x = useTransform(scrollYProgress, [0, 1], [0, -endPx]);
+    const measure = () => {
+      endPx.current = Math.max(0, el.scrollWidth - window.innerWidth);
+    };
+
+    measure();
+
+    const ro = new ResizeObserver(measure);
+    ro.observe(el);
+    window.addEventListener("resize", measure);
+
+    return () => {
+      ro.disconnect();
+      window.removeEventListener("resize", measure);
+    };
+  }, []);
+
+  const x = useTransform(scrollYProgress, (p) => -p * endPx.current);
 
   return (
     <section
