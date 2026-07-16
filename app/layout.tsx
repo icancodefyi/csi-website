@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import LenisProvider from "@/components/lenis-provider";
 import "./globals.css";
 
-const inter = Inter({
-  variable: "--font-inter",
+const satoshi = localFont({
+  src: [
+    { path: "./fonts/satoshi-regular.woff2", weight: "400", style: "normal" },
+    { path: "./fonts/satoshi-medium.woff2", weight: "500", style: "normal" },
+    { path: "./fonts/satoshi-bold.woff2", weight: "700", style: "normal" },
+    { path: "./fonts/satoshi-black.woff2", weight: "900", style: "normal" },
+  ],
+  variable: "--font-satoshi",
   display: "swap",
 });
 
@@ -20,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased`}>
+    <html lang="en" className={`${satoshi.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <LenisProvider>{children}</LenisProvider>
       </body>
