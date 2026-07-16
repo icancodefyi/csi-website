@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import LenisProvider from "@/components/lenis-provider";
 import "./globals.css";
 
 const cabinetGrotesk = localFont({
@@ -21,7 +22,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${cabinetGrotesk.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col font-sans">{children}</body>
+      <body className="min-h-full flex flex-col font-sans">
+        <LenisProvider>{children}</LenisProvider>
+      </body>
     </html>
   );
 }
