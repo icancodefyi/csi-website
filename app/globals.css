@@ -5,7 +5,7 @@ html {
 }
 
 @theme inline {
-  --font-sans: var(--font-cabinet), system-ui, sans-serif;
+  --font-sans: var(--font-inter), system-ui, sans-serif;
 
   --color-csi-navy: #1e3759;
   --color-csi-navy-dark: #0d2137;

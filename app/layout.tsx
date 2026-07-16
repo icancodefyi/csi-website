@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Inter } from "next/font/google";
 import LenisProvider from "@/components/lenis-provider";
 import "./globals.css";
 
-const cabinetGrotesk = localFont({
-  src: "./fonts/CabinetGrotesk-Variable.woff2",
-  variable: "--font-cabinet",
+const inter = Inter({
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -21,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${cabinetGrotesk.variable} h-full antialiased`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col font-sans">
         <LenisProvider>{children}</LenisProvider>
       </body>
