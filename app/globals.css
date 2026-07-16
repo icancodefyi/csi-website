@@ -5,35 +5,24 @@ html {
 }
 
 @theme inline {
-  --font-sans: "Satoshi", system-ui, sans-serif;
+  --font-display: "Clash Display", system-ui, sans-serif;
+  --font-sans: "General Sans", system-ui, sans-serif;
 
-  --color-csi-navy: #1e3759;
-  --color-csi-navy-dark: #0d2137;
-  --color-csi-navy-deeper: #071422;
-  --color-csi-blue: #3b82f6;
-  --color-csi-blue-light: #60a5fa;
-  --color-csi-sky: #0ea5e9;
-  --color-csi-lime: #d4f542;
-  --color-csi-lime-dark: #b8d938;
-  --color-csi-light: #f0f4f8;
-  --color-csi-lighter: #f8fafc;
-  --color-csi-muted: #94a3b8;
-  --color-csi-card: #f0f1f4;
-  --color-csi-dark: #0a0a0a;
-  --color-csi-dark-light: #1a1a1a;
-  --color-csi-dark-lighter: #2a2a2a;
-  --color-csi-soft: #c0c0c0;
-  --color-csi-cream: #fafaf9;
+  --color-primary: #061B4D;
+  --color-accent: #3B82F6;
+  --color-secondary: #EAF2FF;
+  --color-bg: #FFFFFF;
 }
 
 body {
-  background-color: #fafaf9;
+  background-color: #FFFFFF;
+  color: #061B4D;
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(32px);
+    transform: translateY(48px);
   }
   to {
     opacity: 1;
@@ -41,11 +30,12 @@ body {
   }
 }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-.animate-fade-up {
-  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
 }
