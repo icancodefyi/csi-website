@@ -1,45 +1,46 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "phantomSans";
+  src: url("/fonts/phantomSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "phantomSans";
+  src: url("/fonts/phantomSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
 html {
   scroll-behavior: auto;
 }
 
 @theme inline {
-  --font-display: "Clash Display", system-ui, sans-serif;
-  --font-sans: "General Sans", system-ui, sans-serif;
+  --font-display: "phantomSans", system-ui, sans-serif;
+  --font-sans: "phantomSans", system-ui, sans-serif;
 
-  --color-primary: #1e3658;
-  --color-navy: #1e3658;
-  --color-accent: #3B82F6;
-  --color-blue: #3B82F6;
-  --color-secondary: #EAF2FF;
-  --color-soft: #EAF2FF;
-  --color-bg: #FFFFFF;
+  --color-primary: #0B1F4D;
+  --color-navy: #0B1F4D;
+  --color-accent: #2563FF;
+  --color-blue: #2563FF;
+  --color-secondary: #6C8CFF;
+  --color-red: #ec3750;
+  --color-orange: #ff8c37;
+  --color-green: #33d6a6;
+  --color-soft: #E4EFFF;
+  --color-doodle: #C8D8FF;
+  --color-bg: #F8FAFF;
   --color-white: #FFFFFF;
 }
 
 body {
-  background-color: #FFFFFF;
-  color: #1e3658;
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(48px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes marquee-reverse {
-  0% { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  background-color: #F8FAFF;
+  color: #0B1F4D;
+  font-family: "phantomSans", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

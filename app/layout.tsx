@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import LenisProvider from "@/components/lenis-provider";
-import ScrollProgress from "@/components/scroll-progress";
+
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -16,15 +15,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased">
-      <head>
-        <link
-          href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=general-sans@400,500,600,700&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+
       <body className="min-h-full flex flex-col font-sans bg-white text-primary">
-        <ScrollProgress />
-        <LenisProvider>{children}</LenisProvider>
+{children}
       </body>
     </html>
   );
