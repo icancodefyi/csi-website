@@ -3,6 +3,7 @@ import Events from "@/components/events";
 import About from "@/components/about";
 import Benefits from "@/components/benefits";
 import Gallery from "@/components/gallery";
+import Footer from "@/components/footer";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <About />
       <Benefits />
       <Gallery />
+      <Footer />
     </main>
   );
 }
