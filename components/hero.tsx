@@ -452,7 +452,7 @@ export default function Hero() {
             ease: [0.25, 1, 0.33, 1],
             delay: 0.1,
           }}
-          className="font-display font-semibold text-primary leading-[0.9] tracking-[-0.04em]"
+          className="font-serif font-normal text-primary leading-[0.9] tracking-[-0.04em]"
           style={{
             fontSize: "clamp(4.5rem, 6vw, 8.5rem)",
           }}

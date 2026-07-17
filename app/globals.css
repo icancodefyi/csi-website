@@ -2,7 +2,7 @@
 
 @font-face {
   font-family: "zarathustra";
-  src: url("/fonts/zarathustra.ttf") format("truetype");
+  src: url("/fonts/zarathustra.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;

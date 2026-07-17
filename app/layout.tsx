@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+  
 
 export const metadata: Metadata = {
   title: "CSI ACE | Computer Society of India",
   description:
     "Build. Lead. Inspire. The official student chapter of the Computer Society of India at Atharva College of Engineering.",
 };
+
 
 export default function RootLayout({
   children,
