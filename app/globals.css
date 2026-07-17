@@ -1,16 +1,17 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: "phantomSans";
-  src: url("/fonts/phantomSans-Regular.ttf") format("truetype");
+  font-family: "zarathustra";
+  src: url("/fonts/zarathustra.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "phantomSans";
-  src: url("/fonts/phantomSans-Medium.ttf") format("truetype");
-  font-weight: 500;
+  src: url("/fonts/phantomSans-Regular.ttf") format("truetype");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -20,8 +21,10 @@ html {
 }
 
 @theme inline {
-  --font-display: "phantomSans", system-ui, sans-serif;
-  --font-sans: "phantomSans", system-ui, sans-serif;
+  --font-display: "Clash Display", system-ui, sans-serif;
+  --font-sans: "Clash Display", system-ui, sans-serif;
+  --font-serif: "zarathustra", Georgia, serif;
+  --font-body: "phantomSans", system-ui, sans-serif;
 
   --color-primary: #0B1F4D;
   --color-navy: #0B1F4D;
