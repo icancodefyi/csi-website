@@ -319,7 +319,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative h-screen overflow-hidden bg-bg"
+      className="relative h-screen overflow-hidden bg-[#fef7f8]"
     >
       {/* ---- Background ---- */}
       <motion.div
@@ -371,19 +371,27 @@ export default function Hero() {
       {/* ---- Creature ---- */}
       <motion.div
         style={{ y: creatureY }}
-        className="hidden lg:block absolute bottom-5 right-0 z-[25] pointer-events-none opacity-60"
+        className="hidden lg:block absolute bottom-[20px] right-0 z-[25] pointer-events-none"
       >
         <img
           src="/hero/creature1.webp"
           alt=""
-          className="h-[280px] xl:h-[340px] w-auto object-contain"
+          className="w-auto object-contain"
+          style={{
+            width: "calc(544 / 1920 * 100vw)",
+            transform: "translateY(calc(50% - 8px))",
+          }}
         />
       </motion.div>
 
       {/* ---- Navbar ---- */}
       <nav className="relative z-[1100] h-[80px] flex items-center justify-between px-8 lg:px-[55px]">
         <a href="/" className="flex items-center gap-2 no-underline">
-          <img src="/assets/csi-logo.svg" alt="CSI-ACE" className="h-10 w-auto" />
+          <img
+            src="/assets/csi-logo.svg"
+            alt="CSI-ACE"
+            className="h-10 w-auto"
+          />
         </a>
 
         <div className="hidden lg:flex items-center gap-6">
@@ -425,7 +433,12 @@ export default function Hero() {
           href="#"
           className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full text-[15px] bg-soft text-primary/70 hover:text-primary no-underline transition-colors"
         >
-          <span className="w-2 h-2 rounded-full bg-green shrink-0" />
+          <img
+            src="/hero/svg/star.svg"
+            alt=""
+            className="block flex-shrink-0"
+            style={{ width: 18, height: "auto" }}
+          />
           Registrations for CSI-ACE 2026 are now open
           <svg
             width="14"
@@ -478,55 +491,65 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.6 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-5"
         >
-          <a
-            href="#"
-            className="inline-flex h-14 items-center gap-2 rounded-full bg-accent px-8 text-[16px] font-semibold text-white shadow-lg shadow-accent/20 transition-all hover:brightness-110"
-          >
-            Become a Member
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
+          <div className="flex flex-col items-center  relative z-10">
+            <a
+              href="#"
+              className="inline-flex items-center justify-center h-12 px-7 rounded-full text-[20px] no-underline whitespace-nowrap"
+              style={{
+                fontFamily: "var(--font-body)",
+                background: "#17171D",
+                color: "#ffffff",
+              }}
             >
-              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
-            </svg>
-          </a>
-
-          <a
-            href="#"
-            className="inline-flex h-14 items-center gap-2 rounded-full border-2 border-soft bg-white/70 px-8 text-[16px] font-semibold text-primary transition-all hover:bg-soft"
-          >
-            <img src="/hero/svg/star.svg" alt="" className="w-4 h-4" />
-            CSI Membership Card
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 16 16"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
-            </svg>
-          </a>
+              Explore all programs
+              <svg
+                className="ml-1.5 flex-shrink-0"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.8"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M3 8H13M13 8L8.5 3.5M13 8L8.5 12.5" />
+              </svg>
+            </a>
+          </div>
         </motion.div>
       </div>
 
       {/* ---- Wave ---- */}
-      <div className="absolute bottom-0 left-0 right-0 pointer-events-none z-50">
-        <img src="/hero/svg/wave-stroke.svg" alt="" className="w-full block" />
-        <img
-          src="/hero/svg/wave-fill.svg"
-          alt=""
-          className="w-full block -mt-[22px]"
-        />
+      <div
+        className="absolute bottom-[-2px] left-0 right-0 z-[20] pointer-events-none"
+        style={{ lineHeight: 0 }}
+      >
+        <svg
+          viewBox="0 0 1920 22"
+          preserveAspectRatio="none"
+          className="w-full block"
+          style={{ height: 22, marginBottom: -8 }}
+        >
+          <path
+            d="M0,18 C40,18 40,2 80,2 C120,2 120,18 160,18 C200,18 200,2 240,2 C280,2 280,18 320,18 C360,18 360,2 400,2 C440,2 440,18 480,18 C520,18 520,2 560,2 C600,2 600,18 640,18 C680,18 680,2 720,2 C760,2 760,18 800,18 C840,18 840,2 880,2 C920,2 920,18 960,18 C1000,18 1000,2 1040,2 C1080,2 1080,18 1120,18 C1160,18 1160,2 1200,2 C1240,2 1240,18 1280,18 C1320,18 1320,2 1360,2 C1400,2 1400,18 1440,18 C1480,18 1480,2 1520,2 C1560,2 1560,18 1600,18 C1640,18 1640,2 1680,2 C1720,2 1720,18 1760,18 C1800,18 1800,2 1840,2 C1880,2 1880,18 1920,18"
+            fill="none"
+            stroke="var(--color-bg)"
+            strokeWidth="2.5"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 1920 40"
+          preserveAspectRatio="none"
+          className="w-full block"
+          style={{ height: 40 }}
+        >
+          <path
+            d="M0,40 L0,27 C40,27 40,8 80,8 C120,8 120,27 160,27 C200,27 200,8 240,8 C280,8 280,27 320,27 C360,27 360,8 400,8 C440,8 440,27 480,27 C520,27 520,8 560,8 C600,8 600,27 640,27 C680,27 680,8 720,8 C760,8 760,27 800,27 C840,27 840,8 880,8 C920,8 920,27 960,27 C1000,27 1000,8 1040,8 C1080,8 1080,27 1120,27 C1160,27 1160,8 1200,8 C1240,8 1240,27 1280,27 C1320,27 1320,8 1360,8 C1400,8 1400,27 1440,27 C1480,27 1480,8 1520,8 C1560,8 1560,27 1600,27 C1640,27 1640,8 1680,8 C1720,8 1720,27 1760,27 C1800,27 1800,8 1840,8 C1880,8 1880,27 1920,27 L1920,40 Z"
+            fill="var(--color-bg)"
+          />
+        </svg>
       </div>
     </section>
   );
