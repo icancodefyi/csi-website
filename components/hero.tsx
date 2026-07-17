@@ -13,123 +13,126 @@ const navLinks = [
 
 const leftPhotos = [
   {
-    src: "/hero/collage-left/photo1.webp",
+    src: "/gallery/event2.jpg",
     rot: -8,
-    top: "12%",
-    left: -30,
-    z: 10,
-    w: 180,
+    top: 40,
+    left: -60,
+    z: 8,
+    w: 240,
+    h: 180,
     parallax: 0.15,
   },
   {
-    src: "/hero/collage-left/photo2.webp",
+    src: "/gallery/event3.jpg",
     rot: 16,
-    top: "32%",
-    left: 10,
-    z: 20,
-    w: 150,
+    top: 240,
+    left: -10,
+    z: 12,
+    w: 210,
+    h: 155,
     parallax: 0.12,
   },
   {
-    src: "/hero/collage-left/photo3.webp",
+    src: "/gallery/event4.jpg",
     rot: -14,
-    top: "52%",
-    left: -40,
-    z: 5,
-    w: 170,
+    top: 430,
+    left: -70,
+    z: 6,
+    w: 230,
+    h: 170,
     parallax: 0.09,
   },
   {
-    src: "/hero/collage-left/photo4.webp",
+    src: "/gallery/event5.jpg",
     rot: 11,
-    top: "68%",
-    left: 30,
-    z: 15,
-    w: 140,
+    top: 610,
+    left: 0,
+    z: 10,
+    w: 200,
+    h: 150,
     parallax: 0.07,
   },
   {
-    src: "/hero/collage-left/photo5.webp",
-    rot: -20,
-    top: "20%",
-    left: 100,
-    z: 8,
-    w: 160,
+    src: "/gallery/event10.jpg",
+    rot: -12,
+    top: 780,
+    left: -50,
+    z: 7,
+    w: 220,
+    h: 165,
     parallax: 0.05,
   },
   {
-    src: "/hero/collage-left/photo6.webp",
-    rot: 22,
-    top: "44%",
-    left: 80,
-    z: 25,
-    w: 130,
-    parallax: 0.04,
-  },
-  {
-    src: "/hero/collage-left/photo7.webp",
-    rot: -9,
-    top: "62%",
-    left: 60,
-    z: 12,
-    w: 150,
+    src: "/gallery/event11.jpg",
+    rot: 9,
+    top: 960,
+    left: -20,
+    z: 11,
+    w: 195,
+    h: 145,
     parallax: 0.03,
   },
 ];
 
 const rightPhotos = [
   {
-    src: "/hero/collage-right/photo8.webp",
+    src: "/gallery/event6.jpg",
     rot: 10,
-    top: "14%",
-    right: -20,
-    z: 10,
-    w: 180,
+    top: 50,
+    right: -70,
+    z: 8,
+    w: 240,
+    h: 180,
     parallax: 0.15,
   },
   {
-    src: "/hero/collage-right/photo9.webp",
+    src: "/gallery/event7.jpg",
     rot: -16,
-    top: "34%",
-    right: 20,
-    z: 20,
-    w: 160,
+    top: 260,
+    right: -20,
+    z: 12,
+    w: 220,
+    h: 165,
     parallax: 0.12,
   },
   {
-    src: "/hero/collage-right/photo10.webp",
+    src: "/gallery/event8.jpg",
     rot: 13,
-    top: "54%",
-    right: -10,
-    z: 5,
-    w: 170,
+    top: 450,
+    right: -80,
+    z: 6,
+    w: 235,
+    h: 175,
     parallax: 0.09,
   },
   {
-    src: "/hero/collage-right/photo11.webp",
+    src: "/gallery/event9.jpg",
     rot: -11,
-    top: "70%",
-    right: 30,
-    z: 15,
-    w: 140,
+    top: 630,
+    right: -10,
+    z: 10,
+    w: 205,
+    h: 155,
     parallax: 0.07,
   },
   {
-    src: "/hero/collage-right/photo12.webp",
-    rot: 20,
-    top: "22%",
-    right: 120,
-    z: 8,
-    w: 150,
+    src: "/gallery/event12.jpg",
+    rot: 8,
+    top: 800,
+    right: -60,
+    z: 7,
+    w: 225,
+    h: 170,
     parallax: 0.05,
   },
   {
-    src: "/hero/collage-right/photo13.webp",
+    src: "/gallery/event1.jpg",
     rot: -10,
-    top: "47%",
-    right: 100,
-    z: 25,
-    w: 140,
+    top: 980,
+    right: -15,
+    z: 11,
+    w: 200,
+    h: 150,
     parallax: 0.03,
   },
 ];
@@ -137,91 +140,51 @@ const rightPhotos = [
 const stickers = [
   {
     src: "/hero/stickers/sticker1.webp",
-    top: "20%",
-    left: "14%",
+    top: 200,
+    left: 200,
     rot: 18,
-    w: 60,
+    w: 50,
     parallax: 0.08,
   },
   {
     src: "/hero/stickers/sticker2.webp",
-    top: "32%",
-    right: "11%",
+    top: 350,
+    right: 180,
     rot: -12,
-    w: 55,
+    w: 45,
     parallax: 0.06,
   },
   {
     src: "/hero/stickers/sticker3.webp",
-    top: "58%",
-    left: "8%",
+    top: 600,
+    left: 120,
     rot: 8,
     w: 40,
     parallax: 0.05,
   },
   {
     src: "/hero/stickers/sticker4.webp",
-    top: "27%",
-    right: "19%",
+    top: 280,
+    right: 280,
     rot: 15,
-    w: 42,
-    parallax: 0.04,
-  },
-  {
-    src: "/hero/stickers/sticker5.webp",
-    top: "68%",
-    left: "22%",
-    rot: -20,
-    w: 48,
-    parallax: 0.03,
-  },
-  {
-    src: "/hero/stickers/sticker6.webp",
-    top: "44%",
-    right: "8%",
-    rot: 5,
-    w: 40,
-    parallax: 0.07,
-  },
-  {
-    src: "/hero/stickers/sticker7.webp",
-    top: "78%",
-    left: "16%",
-    rot: -8,
-    w: 35,
-    parallax: 0.02,
-  },
-  {
-    src: "/hero/stickers/sticker8.webp",
-    top: "60%",
-    right: "14%",
-    rot: 12,
-    w: 42,
-    parallax: 0.06,
-  },
-  {
-    src: "/hero/stickers/sticker9.webp",
-    top: "17%",
-    left: "32%",
-    rot: -5,
     w: 38,
     parallax: 0.04,
   },
   {
-    src: "/hero/stickers/sticker10.webp",
-    top: "72%",
-    right: "24%",
-    rot: 10,
-    w: 32,
+    src: "/hero/stickers/sticker5.webp",
+    top: 720,
+    left: 300,
+    rot: -20,
+    w: 42,
     parallax: 0.03,
   },
   {
-    src: "/hero/stickers/sticker11.webp",
-    top: "50%",
-    left: "38%",
-    rot: -15,
-    w: 36,
-    parallax: 0.05,
+    src: "/hero/stickers/sticker6.webp",
+    top: 480,
+    right: 120,
+    rot: 5,
+    w: 35,
+    parallax: 0.07,
   },
 ];
 
@@ -241,32 +204,41 @@ function CollagePhoto({
   right,
   z,
   w,
+  h,
   parallax,
   scrollY,
 }: {
   src: string;
   rot: number;
-  top: string;
+  top: number;
   left?: number;
   right?: number;
   z: number;
   w: number;
+  h: number;
   parallax: number;
   scrollY: ReturnType<typeof useScroll>["scrollY"];
 }) {
   const y = useTransform(scrollY, [0, 800], [0, -800 * parallax]);
   return (
     <motion.div
-      style={{ y, top, left, right, zIndex: z, rotate: rot }}
-      className="absolute"
+      style={{
+        y,
+        top,
+        left,
+        right,
+        zIndex: z,
+        rotate: rot,
+        width: w,
+        height: h,
+      }}
+      className="absolute pointer-events-none will-change-transform"
     >
       <img
         src={src}
         alt=""
-        className="rounded-[10px] object-cover"
+        className="w-full h-full rounded-[10px] object-cover"
         style={{
-          width: w,
-          height: w * 0.703,
           border: "4px solid var(--color-white)",
           boxShadow: "0 8px 32px rgba(0,0,0,0.12)",
         }}
@@ -286,9 +258,9 @@ function Sticker({
   scrollY,
 }: {
   src: string;
-  top: string;
-  left?: string;
-  right?: string;
+  top: number;
+  left?: number;
+  right?: number;
   rot: number;
   w: number;
   parallax: number;
@@ -297,13 +269,13 @@ function Sticker({
   const y = useTransform(scrollY, [0, 800], [0, -800 * parallax]);
   return (
     <motion.div
-      style={{ y, top, left, right, zIndex: 30, rotate: rot }}
-      className="absolute pointer-events-auto cursor-grab active:cursor-grabbing"
+      style={{ y, top, left, right, zIndex: 30, rotate: rot, width: w }}
+      className="absolute pointer-events-auto cursor-grab active:cursor-grabbing will-change-transform"
     >
       <img
         src={src}
         alt=""
-        style={{ width: w }}
+        style={{ width: "100%", height: "auto" }}
         className="hover:scale-110 transition-transform duration-200"
       />
     </motion.div>
@@ -348,21 +320,30 @@ export default function Hero() {
       />
 
       {/* ---- Left Photos ---- */}
-      <div className="hidden lg:block absolute inset-y-0 left-0 w-[350px] pointer-events-none">
+      <div
+        className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ zIndex: 1 }}
+      >
         {leftPhotos.map((p, i) => (
           <CollagePhoto key={`l${i}`} {...p} scrollY={scrollY} />
         ))}
       </div>
 
       {/* ---- Right Photos ---- */}
-      <div className="hidden lg:block absolute inset-y-0 right-0 w-[350px] pointer-events-none">
+      <div
+        className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ zIndex: 1 }}
+      >
         {rightPhotos.map((p, i) => (
           <CollagePhoto key={`r${i}`} {...p} scrollY={scrollY} />
         ))}
       </div>
 
       {/* ---- Stickers ---- */}
-      <div className="hidden lg:block pointer-events-none">
+      <div
+        className="hidden lg:block absolute inset-0 overflow-hidden pointer-events-none"
+        style={{ zIndex: 1 }}
+      >
         {stickers.map((s, i) => (
           <Sticker key={`s${i}`} {...s} scrollY={scrollY} />
         ))}
@@ -465,7 +446,7 @@ export default function Hero() {
             ease: [0.25, 1, 0.33, 1],
             delay: 0.1,
           }}
-          className="font-serif font-normal text-primary leading-[0.9] tracking-[-0.04em]"
+          className="font-serif font-normal text-black leading-[0.9] tracking-[-0.04em]"
           style={{
             fontSize: "clamp(4.5rem, 6vw, 8.5rem)",
           }}
